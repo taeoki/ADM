@@ -1,0 +1,33 @@
+Drop box contents: 399 entries
+Searching for: data_app_crash
+
+========================================
+2018-09-10 17:45:16 data_app_crash (text, 2449 bytes)
+Process: com.nhn.android.addressbookbackup
+Flags: 0x3898be44
+Package: com.nhn.android.addressbookbackup v3001900 (3.0.19)
+Foreground: No
+Build: samsung/greatlteks/greatlteks:7.1.1/NMF26X/N950NKSU1AQHA:user/release-keys
+
+java.lang.RuntimeException: Unable to create service com.nhn.android.contacts.functionalservice.account.ContactsSyncProviderService: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.Context com.nhn.android.contacts.NaverContactsApplication.getApplicationContext()' on a null object reference
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:3573)
+	at android.app.ActivityThread.-wrap6(ActivityThread.java)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1749)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6823)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1557)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1445)
+Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.Context com.nhn.android.contacts.NaverContactsApplication.getApplicationContext()' on a null object reference
+	at com.nhn.android.contacts.NaverContactsApplication.getContext(NaverContactsApplication.java:389)
+	at com.nhn.android.contacts.support.database.CursorDaoSupport.<init>(CursorDaoSupport.java:42)
+	at com.nhn.android.contacts.functionalservice.photo.AndroidPhotoDAO.<init>(AndroidPhotoDAO.java:56)
+	at com.nhn.android.contacts.functionalservice.AdditionalInfoSupport.<init>(AdditionalInfoSupport.java:68)
+	at com.nhn.android.contacts.functionalservice.sync.localchange.LocalChangeLogBO.<init>(LocalChangeLogBO.java:53)
+	at com.nhn.android.contacts.functionalservice.sync.ContactsSyncExecutor.<init>(ContactsSyncExecutor.java:52)
+	at com.nhn.android.contacts.functionalservice.account.ContactsSyncProviderService$SyncAdapter.initialze(ContactsSyncProviderService.java:90)
+	at com.nhn.android.contacts.functionalservice.account.ContactsSyncProviderService$SyncAdapter.<init>(ContactsSyncProviderService.java:81)
+	at com.nhn.android.contacts.functionalservice.account.ContactsSyncProviderService.onCreate(ContactsSyncProviderService.java:54)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:3563)
+	... 8 more
